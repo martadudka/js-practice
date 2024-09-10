@@ -1,13 +1,13 @@
-export function contains(str: string): boolean {
-    let i = 0;
-    while (true) {
-        if (i >= str.length) {
-            break;
-        }
-        if (str[i] === ' ') {
-            return true;
-        }
-        i++;
+export function contains(str: string, searchedCharacter: string): boolean {
+  let i = 0;
+  while (true) {
+    if (i >= str.length) {
+      break;
     }
-    return false;
+    if (str[i] === searchedCharacter) {
+      return true;
+    }
+    i++;
+  }
+  return false;
 }
