@@ -1,10 +1,10 @@
-export function contains(str: string, searchedCharacter: string): boolean {
+export function contains(str: string, searchedCharacter: (character: string) => boolean): boolean {
   let i = 0;
   while (true) {
     if (i >= str.length) {
       break;
     }
-    if (str[i] === searchedCharacter) {
+    if (searchedCharacter(str[i])) {
       return true;
     }
     i++;
