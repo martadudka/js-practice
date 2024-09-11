@@ -1,10 +1,14 @@
-export function contains(str: string, searchedCharacter: (character: string) => boolean): boolean {
+export function contains(str: string, searchedCharacter: string | ((character: string) => boolean)): boolean {
   let i = 0;
   while (true) {
     if (i >= str.length) {
       break;
     }
-    if (searchedCharacter(str[i])) {
+    if (typeof searchedCharacter === "function") {
+      if (searchedCharacter(str[i])) {
+        return true;
+      }
+    } else if (str[i] === searchedCharacter) {
       return true;
     }
     i++;
