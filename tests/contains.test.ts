@@ -25,4 +25,12 @@ describe('contains', () => {
     it('returns false if the string does not contain the character "b"', () => {
       expect(contains("I am", (character) => character === "b")).toBe(false);
     });
+
+    it('returns true if the string contains an empty space when only one argument is provided', () => {
+      expect(contains('I am')).toBe(true);
+    });
+
+    it('returns false if the string contains an empty space when only one argument is provided', () => {
+      expect(contains('Iam')).toBe(false);
+    });
 });

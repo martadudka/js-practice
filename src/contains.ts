@@ -1,4 +1,8 @@
-export function contains(str: string, searchedCharacter: string | ((character: string) => boolean)): boolean {
+export function contains(str: string, searchedCharacter?: string | ((character: string) => boolean)): boolean {
+  if (searchedCharacter === undefined) {
+    searchedCharacter = ' ';
+  }
+
   let i = 0;
   while (true) {
     if (i >= str.length) {
