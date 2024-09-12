@@ -1,4 +1,4 @@
-export function contains(str: string, searchedCharacter?: string | ((character: string) => boolean)): boolean {
+export function contains<Type>(str: string | Type[], searchedCharacter?: Type | ((character: Type) => boolean)): boolean {
   if (searchedCharacter === undefined) {
     searchedCharacter = ' ';
   }
